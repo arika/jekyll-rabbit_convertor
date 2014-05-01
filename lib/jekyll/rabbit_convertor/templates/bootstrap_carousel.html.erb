@@ -1,0 +1,17 @@
+<div id="slide-<%= digest %>" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div class="carousel-inner">
+    <% images.each do |slide_number, title, url, width, height| %>
+    <div class="item<%=h slide_number == 0 ? ' active' : '' %>">
+      <img src="<%=h url %>" alt="<%=h title %>" title="<%=h title %>" width="<%=h width %>" height="<%=h height %>" class="center-block">
+      <div class="carousel-caption"><%=h slide_number + 1 %>/<%=h images.size %></div>
+    </div>
+    <% end %>
+  </div>
+
+  <a class="left carousel-control"
+    href="#slide-<%=h digest %>"
+    data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control"
+    href="#slide-<%=h digest %>"
+    data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
